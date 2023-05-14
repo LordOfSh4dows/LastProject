@@ -14,16 +14,24 @@ public class TelegaMOVIE : MonoBehaviour
         {
             index++;
         }
+        if(other.tag == "SPHERA")
+        {
+            speed=1;
+        }
     }
+
 
     void Update()
     {
-        
-        if (index<Targets.Length)
+        if (speed==1)
         {
-
-            var heading =  Targets[index].transform.position-gameObject.transform.position;
-            gameObject.transform.Translate(heading*Time.deltaTime);
+            if (index<Targets.Length)
+            {
+                var heading =  Targets[index].transform.position-gameObject.transform.position;
+                var distance = heading.magnitude;
+                var direction = heading / distance;
+                gameObject.transform.Translate(direction*10*Time.deltaTime);
+            }
         }
     }
 }

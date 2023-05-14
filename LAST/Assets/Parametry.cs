@@ -9,7 +9,7 @@ public class Parametry : MonoBehaviour
     public ConfigurableJoint Linear;
     public HingeJoint Plecho;
     public HingeJoint Predplechie;
-
+    public ConfigurableJoint ZACH;
     public float Q1;
     public float Q2;
     public float Q3;
@@ -33,5 +33,9 @@ public class Parametry : MonoBehaviour
         JS1 = Predplechie.spring;
         JS1.targetPosition = Q4;
         Predplechie.spring = JS1;
+        if (Input.GetAxis("Jump") > 0)
+        {
+            ZACH.targetPosition = new Vector3(0,0,0);
+        }
     }
 }
