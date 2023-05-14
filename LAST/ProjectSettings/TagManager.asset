@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TELEGA
+  - MARK
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Stanok
   - Water
   - UI
   - 
